@@ -1,0 +1,168 @@
+      <div     xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" 
+      id="viewFormAddUser" class="modal text-center" sec:authorize="hasAnyRole('ROLE_ADMIN')">
+           <form class="modal-content animate" id="formAddUser"  name="formAddUser">
+           <div class="">
+						<button type="button" class="close" onclick="document.getElementById('viewFormAddUser').style.display='none'" >&times;</button>
+			</div> 
+           <br><h3>ADD NEW USER</h3><br>
+        <table style=" width:100%"  class="">
+        <tr>
+          <td><label ><b>FirstName</b></label></td>
+          <td><input autofocus type="text" name="firstName" id="firstName" class="form-control" autocomplete="off"></td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         <tr>
+          <td><label ><b>LastName</b></label></td>
+          <td><input  type="text" name="lastName" id="lastName" class="form-control" autocomplete="off"></td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         <tr id="check">
+          <td><label ><b>Email<span style="color: red">(*)</span></b></label></td>
+          <td><input onblur="return checkEmail()" value="" autocomplete="off" type="email" name="email" id="email" class="form-control" required></td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         
+          <tr>
+          <td><label ><b>Role</b></label></td>
+          <td>
+          	<select name="idRole" id="idRole">
+          		<option value="2">Mod</option>
+          		<option value="1">Admin</option>
+          		
+          	</select>
+          </td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         
+         <tr>
+          <td><label ><b>Password<span style="color: red">(*)</span></b></label></td>
+          <td> <input autocomplete="off" type="password" name="password" id="password" class="form-control"></td>
+         </tr>
+         <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         <tr>
+          <td><label ><b>Confirm Password<span style="color: red">(*)</span></b></label></td>
+          <td> <input autocomplete="off" type="password" name="rePassword" id="rePassword" class="form-control"></td>
+         </tr>
+         <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="ADD USER" class="btn btn-primary">
+            <input type="reset" value="CANCEL" class="btn btn-danger"
+              onclick="document.getElementById('viewFormAddUser').style.display='none'">
+            
+          </td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+        </table>
+       </form>
+    </div>
+    
+    <div xmlns:th="http://www.thymeleaf.org" 
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+    	id="viewFormEditUser" class="modal text-center" sec:authorize="hasAnyRole('ROLE_ADMIN')">
+           <form class="modal-content animate" id="formEditUser" name="formEditUser">
+           <div class="">
+						<button type="button" class="close" onclick="document.getElementById('viewFormEditUser').style.display='none'" >&times;</button>
+			</div> 
+           <br><h3>EDIT USER</h3><br>
+          <!--  <p style="color: red">(*)Not be empty!</p> -->
+        <table style=" width:100%"  class="">
+        <tr>
+          <td><input type="hidden" id="idUserEdit" name="idUserEdit" autocomplete="off"></td>
+          <td><br></td>
+         </tr>
+        <tr>
+          <td><label ><b>FirstName</b></label></td>
+          <td><input autofocus type="text" name="firstName" id="firstNameEdit" class="form-control" autocomplete="off"></td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         <tr>
+          <td><label ><b>LastName</b></label></td>
+          <td><input type="text" name="lastName" id="lastNameEdit" class="form-control" autocomplete="off"></td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         <tr>
+          <td><label ><b>Email<span style="color: red">(*)</span></b></label></td>
+          <td><input type="email" name="email" id="emailEdit" class="form-control" disabled="disabled" autocomplete="off"></td>
+         </tr>
+         <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         <tr>
+          <td><label><b>Password</b></label></td>
+          <td> <input type="password" name="passwordEdit" id="passwordEdit" class="form-control" autocomplete="off"></td>
+         </tr>
+         <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         <tr>
+          <td><label ><b>Confirm Password</b></label></td>
+          <td> <input type="password" name="rePasswordEdit" id="rePasswordEdit" class="form-control" autocomplete="off"></td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         
+          <tr>
+          <td><label ><b>Role</b></label></td>
+          <td>
+          	<select name="idRole" id="idRoleEdit">
+          		<option value="2">Mod</option>
+          		<option value="1">Admin</option>
+          		
+          	</select>
+          </td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+         
+         <tr>
+          <td></td>
+          <td>
+            <input type="submit" value="UPDATE" class="btn btn-primary">
+            <input type="reset" value="CANCEL" class="btn btn-danger"
+              onclick="document.getElementById('viewFormEditUser').style.display='none'">
+            
+          </td>
+         </tr>
+          <tr>
+          <td><br></td>
+          <td><br></td>
+         </tr>
+        </table>
+       </form>
+    </div>

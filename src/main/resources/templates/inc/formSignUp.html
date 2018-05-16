@@ -1,0 +1,46 @@
+<div id="viewFormSignUp" class="modal text-center">
+    <form class="modal-content animate" id="formSignUp"  name="formSignUp">
+        <div class="">
+            <button type="button" class="close" onclick="document.getElementById('viewFormSignUp').style.display='none'" >&times;</button>
+        </div>
+        <br><h3>SIGN UP</h3><br>
+        <table style=" width:100%"  class="">
+            <tr id="check">
+                <td><label><b>Email<span style="color: red">(*)</span></b></label></td>
+                <td><input autofocus type="email" onblur="return checkEmail()" name="emailSignUp" id="email" class="form-control" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td><label><b>Password<span style="color: red">(*)</span></b></label></td>
+                <td><input type="password" name="passwordSignUp" id="passwordSignUp" class="form-control" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td><label><b>Confirm password<span style="color: red">(*)</span></b></label></td>
+                <td><input type="password" name="rePasswordSignUp" id="rePasswordSignUp" class="form-control" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="SIGN UP" class="btn btn-primary">
+                    <input type="reset" value="CANCEL" class="btn btn-danger"
+                           onclick="document.getElementById('viewFormSignUp').style.display='none'">
+                </td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td><br></td>
+            </tr>
+        </table>
+    </form>
+</div>
